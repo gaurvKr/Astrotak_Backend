@@ -15,6 +15,10 @@ mongoose.connect(url).
 then((res) => {console.log('connted to db');}).
 catch((err) => {console.log(err);}) 
 
+app.get('/',async (req,res) => {
+    res.send('home')
+})
+
 app.get('/astrologer',async (req,res) => {
     const astrologers = await AstrologerModel.find({});
     res.send(astrologers)
